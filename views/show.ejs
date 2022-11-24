@@ -5,28 +5,39 @@
     <%- include("./partials/header.ejs") %>
     <article>
             <!-- content -->
-            <% let index = +id - 1%>
+            <% let index = Pokemon.findIndex((obj) => obj.id === id)%>
             <h3><%= Pokemon[index].name %></h3>
             <img src="<%= Pokemon[index].img %>" 
             alt="<%= Pokemon[index].name %>">
             
             <h3>Type: </h3>
             <ul>
+                <% if(typeof Pokemon[index].type === "object"){%>
                 <% for(type of Pokemon[index].type){ %>
                     <li><%= type %></li>
+                <% } %> 
+                <% } %> 
+
+                <% if(typeof Pokemon[index].type !== "object"){%>
+                    <li><%= Pokemon[index].type %></li>
                 <% } %> 
             </ul>
 
             <h3>Stats: </h3>
             <ul>
+                <% if(typeof Pokemon[index].stats === "object"){%>
                 <% for(stats in Pokemon[index]["stats"]){ %>
                     <li><%= stats %>: <%= Pokemon[index]["stats"][stats] %></li>
+                <% } %> 
+                <% } %> 
+
+                <% if(typeof Pokemon[index].stats !== "object"){%>
+                    <li><%= Pokemon[index].stats %></li>
                 <% } %> 
             </ul>
 
 
             <!-- buttons -->
-            <a href="/pokemon"><button>Back to Main</button></a>
 
             <a href="/pokemon/<%= Pokemon[index].id %>/edit">
                 <button>Edit</button>

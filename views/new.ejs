@@ -3,6 +3,22 @@
     <%- include("./partials/head.ejs") %>
 <body>
     <%- include("./partials/header.ejs") %>
+    <h4>Create a new Pokemon to add it to your Pokedex!</h4>
+
+    <!-- you can only put get or post in the form method -->
+    <form action = "/pokemon" method = "POST">
+        Name: <input type="text" name="name" placeholder="Pikachu"><br><br>
+       
+        ID: <input type="text" name="id" value="<%= newPokemonId %>"><br><br>
+        
+        Image: <input type="text" name="img" placeholder="https://w7.pngwing.com/pngs/585/436/png-transparent-pokemon-pikachu-illustration-icon-pikachu-background-mammal-food-vertebrate-thumbnail.png"><br><br>
+        
+        Type: <input type="text" name="type" placeholder="Electric"><br><br>
+        
+        Stats: <input type="text" name="stats" placeholder="hp: 45, attack: 49, defense: 49"><br><br>
+        
+        <input type="submit" value="Create Pokemon">
+    </form>
     
 </body>
 </html>

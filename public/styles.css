@@ -1,0 +1,9 @@
+body{
+    display: flex; /* or inline-flex */
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    
+
+
+}

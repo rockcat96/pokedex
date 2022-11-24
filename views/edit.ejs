@@ -3,6 +3,23 @@
     <%- include("./partials/head.ejs") %>
 <body>
     <%- include("./partials/header.ejs") %>
+    <h4>Update <%=Pokemon[0].name%></h4>
+
+    <!-- you can only put get or post in the form method -->
+    <form action="/pokemon/<%= Pokemon[0].id %>?_method=PUT" method="POST">
+        
+        Name: <input type="text" name="name" value="<%=Pokemon[0].name%>"><br><br>
+       
+        ID: <input type="text" name="id" value="<%=Pokemon[0].id%>"><br><br>
+        
+        Image: <input type="text" name="img" value="<%=Pokemon[0].img%>"><br><br>
+        
+        Type: <input type="text" name="type" value="<%=Pokemon[0].type%>"><br><br>
+
+        Stats: <input type="text" name="stats" value="<%=Pokemon[0].stats%>"><br><br>
+                
+        <input type="submit" value="Update Pokemon">
+    </form>
     
 </body>
 </html>
