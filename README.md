@@ -1,6 +1,6 @@
  # Pokedex App
 
-An online application used to search Pokemon data. The user should be able to perform on each Pokemon. 
+An online application used to search Pokemon data. The user should be able to perform CRUD on each Pokemon. 
 
 
  ### Technologies used
